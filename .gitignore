@@ -1,0 +1,5 @@
+
+target/
+resources/.terraform/
+resources/*.tfstate
+resources/*.tfstate.backup
