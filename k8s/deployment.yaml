@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: trainbook
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: trainbook
