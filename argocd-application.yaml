@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: trainbook
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/sriilakshmi-maila/aws-eks-java-deployment.git
+    targetRevision: master
+    path: helm/trainbook
+    helm:
+      releaseName: trainbook
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
